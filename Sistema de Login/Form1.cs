@@ -10,6 +10,16 @@ namespace Sistema_de_Login
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text=="")
+            {
+                MessageBox.Show("Insira o email");
+                return;
+            }
+            else if (textBox2.Text=="")
+            {
+                MessageBox.Show("Insira a senha");
+                return;
+            }
             string email = textBox1.Text;
             string senha = textBox2.Text;
             if (usuarios.Count > 0)
@@ -18,7 +28,7 @@ namespace Sistema_de_Login
                 {
                     if (email == item.Email && senha == item.Senha)
                     {
-                        MessageBox.Show("Login realizado com sucesso");
+                        MessageBox.Show("Login realizado com sucesso!");
                         Form3 form3 = new Form3(email);
                         this.Visible = false;
                         form3.Visible = true;

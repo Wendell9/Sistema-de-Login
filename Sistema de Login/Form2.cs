@@ -22,10 +22,18 @@ namespace Sistema_de_Login
         {
             string nome, senha, email;
             int idade;
-            nome = textBox1.Text;
-            idade = int.Parse(textBox2.Text);
-            email = textBox3.Text;
-            senha = textBox4.Text;
+            if (textBox1.Text=="" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+                return;
+            }
+            else
+            {
+                nome = textBox1.Text;
+                idade = int.Parse(textBox2.Text);
+                email = textBox3.Text;
+                senha = textBox4.Text;
+            }
 
             if (idade < 0 || idade > 120)
             {
